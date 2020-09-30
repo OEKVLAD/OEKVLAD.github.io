@@ -1,0 +1,5 @@
+<p>main-menu works!</p>
+<div *ngFor="let item of items; index as i">
+  <app-menu-items [itemLink]="item['routeLink']" [itemTitle]="item['tittle']"></app-menu-items>
+</div>
+
