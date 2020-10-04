@@ -1,0 +1,6 @@
+
+
+<div class="content" *ngFor="let module of modules;">
+
+    <app-content-image-text *ngIf="module.name ==='image_text'" [module]="module"></app-content-image-text>
+</div>

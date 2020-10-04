@@ -12,10 +12,28 @@ export class MainMenuComponent implements OnInit {
     this.items = [
       {
         "routeLink":"/",
-        "tittle":"home"},
+        "tittle":"HOME"
+      },
       {
         "routeLink":"/dashboard",
-        "tittle":"dashboard"},
+        "tittle":"DASHBOARD"
+      },
+      {
+        "routeLink":"/dashboard",
+        "tittle":"RESUME"
+      },
+      {
+        "routeLink":"/dashboard",
+        "tittle":"PROJECTS"
+      },
+      {
+        "routeLink":"/pages",
+        "tittle":"PORTFOLIO"
+      },
+      {
+        "routeLink":"/dashboard",
+        "tittle":"CONTACT"
+      },
     ];
   }
 
