@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {ContentService} from "../content/content.service";
+import { MainMenu } from './main-menu';
+import { MainMenuService } from './main-menu.service';
 
 @Component({
   selector: 'app-main-menu',
@@ -6,20 +9,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./main-menu.component.scss']
 })
 export class MainMenuComponent implements OnInit {
-  items: any;
+  items: MainMenu[];
 
-  constructor() {
-    this.items = [
-      {
-        "routeLink":"/",
-        "tittle":"home"},
-      {
-        "routeLink":"/dashboard",
-        "tittle":"dashboard"},
-    ];
-  }
+  constructor(private MainMenuService: MainMenuService,) {
+              }
 
   ngOnInit(): void {
+    this.getMenu();
+  }
+
+  getMenu(): void {
+    this.MainMenuService.getMenu()
+      .subscribe(items => this.items = items);;
   }
 
 }
