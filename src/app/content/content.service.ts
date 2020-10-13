@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Modules } from './modules';
+import { Modules } from '../../entity/modules';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
 
@@ -8,15 +8,13 @@ import { Observable } from "rxjs";
 })
 export class ContentService {
 
-  private contentUrl = 'http://vladyslavomelchenko.eu/api/contentpage/';
+  private contentUrl = 'https://vladyslavomelchenko.eu/api/contentpage';
 
 
-  constructor(
-    private http: HttpClient,
-   ) {
+  constructor(private http: HttpClient) {
   }
 
-  getModules(): Observable<Modules[]> {
-     return this.http.get<Modules[]>(this.contentUrl);
+  getModules(url: string): Observable<Modules[]> {
+     return this.http.get<Modules[]>(`${this.contentUrl}?url=\/${url}`);
   }
 }
