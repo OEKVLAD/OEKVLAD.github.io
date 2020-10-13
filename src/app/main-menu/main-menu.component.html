@@ -1,4 +1,4 @@
 <div class="main-menu">
-  <app-menu-items  *ngFor="let item of items; index as i" [itemLink]="item['routeLink']" [itemTitle]="item['tittle']"></app-menu-items>
+  <app-menu-items  *ngFor="let item of items; index as i" [itemLink]="item.url" [itemTitle]="item.title"></app-menu-items>
 </div>
 
